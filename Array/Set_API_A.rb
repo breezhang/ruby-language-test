@@ -1,12 +1,21 @@
 require 'ap'
+require 'pp'
 
 #use Array function
+
+# y can use ap pp module format out message
 
 class Program_Run_Set
 
   ap [].class.instance_methods(false)
 
-  mem1 = 0..127
+  p "ruby has four std type"
+
+  ap [1.class, "Hello Word".class, (1..2).class, /\w/.class]
+
+  mem1 = *(0..127) ||(0..127).to_a||(0..127).to_ary || Array(0..127) # Range to Array
+
+  # asterisk parameters in Ruby is splat operator
 
   mem2 = %w{ lazy dog jumped over quick brown fox} #string set
 
@@ -56,7 +65,16 @@ class Program_Run_Set
 
   p "has some stuff"
 
-  ap [1, 2, 3].zip([4, 5, 6]).flatten
+  ap [1, 2, 3].zip([4, 5, 6])
+
+  pp [1, 2, 3].zip([4, 5, 6])
 
 
+  p "almost every program language has slice function "
+
+  ap mem2[1..3]
+
+  p mem1.slice(4, 7)
+
+ 
 end
