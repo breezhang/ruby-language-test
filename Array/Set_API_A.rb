@@ -76,5 +76,18 @@ class Program_Run_Set
 
   p mem1.slice(4, 7)
 
- 
+
+  p Array.included_modules
+
+  p
+
+  ap Array.included_modules
+
+  p Array.class.ancestors
+
+
+  p "y can find array has many set operator !"
+
+  p "M$ copy many ruby idea  to dotnet :P"
+
 end
