@@ -1,5 +1,5 @@
-require 'ap'
-require 'pp'
+require 'awesome_print'
+require 'prettyprint'
 
 #use Array function
 
@@ -67,7 +67,7 @@ class Program_Run_Set
 
   ap [1, 2, 3].zip([4, 5, 6])
 
-  pp [1, 2, 3].zip([4, 5, 6])
+  p [1, 2, 3].zip([4, 5, 6])
 
 
   p "almost every program language has slice function "
@@ -83,11 +83,11 @@ class Program_Run_Set
 
   ap Array.included_modules
 
-  p Array.class.ancestors
+  PP.pp Array.class.ancestors
 
 
-  p "y can find array has many set operator !"
+  p 'y can find array has many set operator !'
 
-  p "M$ copy many ruby idea  to dotnet :P"
+  p 'M$ copy many ruby idea  to dot net :P'
 
 end
