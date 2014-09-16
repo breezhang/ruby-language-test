@@ -1,93 +1,32 @@
-require 'awesome_print'
-require 'prettyprint'
-
 #use Array function
-
 # y can use ap pp module format out message
 
-class Program_Run_Set
+class Array_some_op
 
-  ap [].class.instance_methods(false)
+  attr_accessor :mem1,:mem2,:mem3
 
-  p "ruby has four std type"
+  def  initialize
 
-  ap [1.class, "Hello Word".class, (1..2).class, /\w/.class]
+    @mem3 = mem1.map { |x| x.chr } # map
+    @mem2 = %w{ lazy dog jumped over quick brown fox} #string set
+    @mem1 = *(0..127) ||(0..127).to_a||(0..127).to_ary || Array(0..127) # Range to Array
 
-  mem1 = *(0..127) ||(0..127).to_a||(0..127).to_ary || Array(0..127) # Range to Array
+  end
 
   # asterisk parameters in Ruby is splat operator
 
-  mem2 = %w{ lazy dog jumped over quick brown fox} #string set
+  def  array_has_max_method?
+    [@mem1.max,@mem2.max,@mem3.max]
+  end
 
+  def  array_has_filter_methods?
+    {
+      :select_result =>@mem1.select{|x| x%2 ==0},
+      :group_method  =>(@mem3.grep(/[\x00-\x7F]/)).select { |x| x =~/[\000-~]/ },
+      :map           => @mem3.map { |x| x.gsub(/[\x00-\x7F]/) { |y| y.ord } }
 
-  mem3 = mem1.map { |x| x.chr } # map
-
-  ap mem1.max
-
-  ap [mem3.max, mem3.min] #max  min
-
-  ap mem1.select { |x| x %2==0 } #select
-
-  ap (mem3.grep(/[\x00-\x7F]/)).select { |x| x =~/[\000-~]/ } #perl [ -~] work but ruby not  fix through \x \000
-
-  ap mem3.map { |x| x.gsub(/[\x00-\x7F]/) { |y| y.ord } }
-
-  ap %x(ls)
-
-  ap "lazy dog jumped over quick brown fox".split(' ') #use split easy get array object
-
-  p mem2.size #??
-
-
-  p 'ruby has many verb operator set eg: select add select uniq first find'
-
-  ap mem3.collect { |x| x.ord }
-
-  p "perl own very useful toolkit 'pack' 'unpack' ruby also own same "
-
-
-  ap mem3.collect { |x| x.unpack('C')[0] }
-
-  p "see some thing"
-
-  mem2.each_index { |x| p mem2[x] if x %2 ==0 }
-
-
-  p "stack operator"
-
-  # ap  mem2.pop
-
-  p "query operator"
-
-  ap mem2.rotate
-
-  ap mem2.unshift("dog")
-
-  p "has some stuff"
-
-  ap [1, 2, 3].zip([4, 5, 6])
-
-  p [1, 2, 3].zip([4, 5, 6])
-
-
-  p "almost every program language has slice function "
-
-  ap mem2[1..3]
-
-  p mem1.slice(4, 7)
-
-
-  p Array.included_modules
-
-  p
-
-  ap Array.included_modules
-
-  PP.pp Array.class.ancestors
-
-
-  p 'y can find array has many set operator !'
-
-  p 'M$ copy many ruby idea  to dot net :P'
-
+    }
+  end
 end
+
+
