@@ -11,7 +11,7 @@ require  'minitest/autorun'
 #   test   object  
 #
 
-require  'Array/Set_API_A.rb'
+require_relative   '../Array/Set_API_A.rb'
 
 
 
@@ -39,6 +39,7 @@ describe    'some simple test '   do
     describe  'equment '  do
 
       it  'equment  some stuff' do
+        @mem.array_has_max_method?.size.must_equal 3
 
       end
 
