@@ -7,10 +7,9 @@ class Array_some_op
 
   def  initialize
 
-    @mem3 = mem1.map { |x| x.chr } # map
-    @mem2 = %w{ lazy dog jumped over quick brown fox} #string set
     @mem1 = *(0..127) ||(0..127).to_a||(0..127).to_ary || Array(0..127) # Range to Array
-
+    @mem2 = %w{ lazy dog jumped over quick brown fox} #string set
+    @mem3 = mem1.map { |x| x.chr } # map
   end
 
   # asterisk parameters in Ruby is splat operator

@@ -8,27 +8,10 @@ require  'minitest/autorun'
 
 
 # let's start  some simple test code  for  minitest
-
-
 #   test   object  
 #
 
-
-class  Foo
-  attr_accessor :num
-
-  def initialize
-    @num =1
-
-  end
-
-
-  def  plus?
-    @num +=1
-  end
-
-end
-
+require  'Array/Set_API_A.rb'
 
 
 
@@ -36,12 +19,13 @@ end
 describe    'some simple test '   do 
 
   before   do
-    @mem   =  Foo.new
+    @mem   = Array_some_op.new
+
   end
 
   describe   'must be '  do
     it   'simple test must be'   do
-      @mem.must_be_instance_of Foo
+      @mem.must_be_instance_of  Array_some_op
     end
 
   end
@@ -55,8 +39,6 @@ describe    'some simple test '   do
     describe  'equment '  do
 
       it  'equment  some stuff' do
-
-        @mem.plus?.must_equal 2
 
       end
 
